@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url": "data/injurydeath.csv" },
+  "hconcat":[
+    {"width": 360,
+    "mark": {"type":"line","point":true},
+    "encoding": {
+        "x": { "timeUnit": "year", "field": "Year", "type": "ordinal", "title":null },
+        "y": { "aggregate": "sum", "field": "Injuries", "title": "Injuries",
+        "scale":{"domainMin":10000}},
+        "color": { 
+          "field": "Gender",
+          "type": "nominal",
+          "scale":{"range": ["#E2619F","#4895EF"]} }
+    }
+  },
+
+  {"width": 360,
+    "mark": {"type":"line","point":true},
+    
+    "encoding": {
+        "x": { "timeUnit": "year", "field": "Year", "type": "ordinal", "title":null},
+        "y": { "aggregate": "sum", "field": "Deaths", "title": "Deaths" },
+        "color": { 
+          "field": "Gender",
+          "type": "nominal",
+          "scale":{"range": ["#E2619F","#4895EF"]} }
+    }
+  }
+
+  ],
+  "config": {"legend": {
+      "orient": "top",
+       "layout": {
+        "top": {"anchor": "middle"}
+      }
+      },
+        "view": {"stroke":"transparent"},
+      
+      "background": "#c5e4e6"
+    }
+}

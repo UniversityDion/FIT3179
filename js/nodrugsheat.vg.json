@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "data": { "url": "data/nodrugs.csv" },
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "Age", "type": "ordinal","title":"Age of admitted person"},
+    "x": {"field": "Number", "type": "ordinal","title":"Number of drugs present at admission",
+    "axis": {"labelAngle": 0}
+  
+  },
+    "color": {
+      "aggregate": "sum",
+      "field": "Count",
+      "scale": {"scheme":"bluegreen", "domain":[0,4500]},
+      "title": "Hospitalisations"
+      
+    },
+    "tooltip": [
+      {"field": "Count", "type": "nominal", "title":"Hospitalisations  "}
+    ]
+  },
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"}
+  },
+  "title":"Influence by Number of Drugs"
+}

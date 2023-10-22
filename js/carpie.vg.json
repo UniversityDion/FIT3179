@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple donut chart with embedded data.",
+  "width":"container",
+  "autosize":"fit",
+    "data": {
+      "url":"data/piedat.csv"
+    },
+    "layer":[
+      {
+      "transform": [
+        {"filter": "datum.Mode == 'Cars/Trucks'"}
+      ],
+      
+      "mark": {"type": "arc", "stroke":null,"innerRadius": 60,"outerRadius":75},
+      "encoding": {
+        "theta": {"field": "Injuries", "type": "quantitative"},
+        "color": {"field": "Age", "type": "ordinal","legend":null,"scale":{"range":["#8B0000", "#B22222", "#CD5C5C", "#F08080", "#FFA07A"]}},
+        "tooltip": [
+          {"field": "Injuries", "type": "quantitative", "title":"Hospitalisations  "},
+          {"field": "Age", "type": "nominal", "title":"Age group  "}
+        ]
+      }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "text": "Cars/Trucks",
+          "align": "center",
+          "fill": "brown",
+          "fontSize": 13}
+      }
+  
+  ],
+  "config": {
+    "view": {
+       "stroke": "transparent"
+    },
+    "background":"#c5e4e6"
+  }
+  } 

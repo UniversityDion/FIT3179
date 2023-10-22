@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "data": { "url": "data/drugname.csv" },
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "Age", "type": "ordinal","title":"Age of admitted person"},
+    "x": {"field": "Number", "type": "nominal","title":null,
+    "scale": {
+      "domain": [
+        "Tobacco",
+        "Depressants",
+        "Non-opioids",
+        "Antidepressants",
+        "Antipsychotics",
+        "Opioids",
+        "Other"
+        
+      ]}
+    },
+    "color": {
+      "aggregate": "sum",
+      "field": "Count",
+      "scale": {"scheme":"bluegreen","domain":[0,4500]},
+      "title": "Hospitalisations"
+    },
+    "tooltip": [
+      {"field": "Count", "type": "nominal", "title":"Hospitalisations  "}
+    ]
+  },
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"}
+  },
+  "title":"Influence by Drug type"
+}

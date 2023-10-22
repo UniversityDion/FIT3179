@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "hconcat":[
+
+    {"width": 375,
+    "data": { "url": "data/nodrugs.csv" },
+    "mark": "rect",
+    "encoding": {
+      "y": {"field": "Age", "type": "ordinal","title":"Age of admitted person"},
+      "x": {"field": "Number", "type": "ordinal","title":"Number of drugs present at admission",
+      "axis": {"labelAngle": 0,"orient":"top"}
+    
+    },
+      "color": {
+        "aggregate": "sum",
+        "field": "Count",
+        "scale": {
+          "range":[
+            "#D2B48C",
+            "#CDBA96",
+            "#C8A696",
+            "#A0522D",
+            "#8B4513",
+            "#79443B",  
+            "#654321",
+            "#3C1406"
+        ],
+           "domain":[0,4500]},
+        "title": "Hospitalisations"
+        
+      },
+      "tooltip": [
+        {"field": "Count", "type": "nominal", "title":"Hospitalisations  "},
+        {"field": "Age", "type": "ordinal", "title":"Age group  "},
+        {"field": "Number", "type": "nominal", "title":"Number of drugs other than alcohol "}
+      ]
+    }
+  },
+  {"width": 360,
+  "data": { "url": "data/drugname.csv" },
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "Age", "type": "ordinal","title":null},
+    "x": {"field": "Number", "type": "nominal","title":null,
+    "axis": {"labelAngle": -30,"orient":"top"},
+    "scale": {
+      "domain": [
+        "Tobacco",
+        "Depressants",
+        "Non-opioids",
+        "Antidepressants",
+        "Antipsychotics",
+        "Opioids",
+        "Other"
+        
+      ]}
+    },
+    "color": {
+      "aggregate": "sum",
+      "field": "Count",
+      "scale": {
+        "range":[
+          "#D2B48C",
+          "#CDBA96",
+          "#C8A696",
+          "#A0522D",
+          "#8B4513",
+          "#79443B",  
+          "#654321",
+          "#3C1406"
+      ],
+         "domain":[0,4500]},
+      "title": "Hospitalisations"
+    },
+    "tooltip": [
+      {"field": "Count", "type": "nominal", "title":"Hospitalisations  "},
+      {"field": "Age", "type": "ordinal", "title":"Age group  "},
+      {"field": "Number", "type": "nominal", "title":"Drug type "}
+    ]
+  }
+}
+  ],
+  "title":null,
+  "config": {"legend": {"title": null,
+      "orient": "top",
+       "layout": {
+        "top": {"anchor": "middle"}
+      }
+      },"title": {
+        "orient": "top",
+        "anchor": "middle",
+        "fontSize": 18
+        
+        },
+      "axis": {"grid": true, "tickBand": "extent"},
+      "background": "#c5e4e6"}
+}

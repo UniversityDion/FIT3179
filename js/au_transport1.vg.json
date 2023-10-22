@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "data/transportdat.csv"
+  },
+  "width": "container",
+  "height":200,
+  "mark": {
+    "type": "circle",
+    "stroke": "black",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "y": {
+      "field": "Cause",
+      "type": "nominal",
+      "axis": {"grid": false,"labelAngle":0,"labelFontWeight": "bold"},"title":null
+    },
+    "x": {"field": "Mode", "type": "nominal", "axis": {"grid":false,"title": "","labelAngle":0}},
+    "size": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Instances",
+      "scale": {
+        "range": [1, 1000,10000]
+      }
+    },
+    "color": {"field": "Cause","title":"Result", "type": "nominal", 
+    "scale":{"range": [
+      "red","blue"
+    ]}},
+        
+    "tooltip": [
+      {"field": "Cause", "type": "nominal", "title": "Result: "},
+      {"field": "Mode", "type": "nominal", "title": "Cause: "},
+      {"field": "Count", "type": "quantitative", "title": "Instances: "}
+    ]
+  },
+  "config": {
+    "background":"#c5e4e6"},
+  "view": {"stroke":"transparent"}
+}

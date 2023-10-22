@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": "My chart",
+  "width": "container",
+  "data": {
+    "url": "data/transport.csv"
+  },
+  "transform": [
+    {
+      "calculate": "split(datum.Mode, ' ')",
+      "as": "Cause"
+    },
+    {
+      "fold":["Injuries", "Deaths"], 
+      "as":["label_name", "y"]}
+  ],
+  "encoding": {
+    "x": {"field": "Cause", "type": "nominal", "axis": {"labelAngle": -90}}
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "xOffset": -10, "size": 20, "color": "blue"},
+      "encoding": {
+        "y": {
+          "field": "Injuries",
+          "type": "quantitative",
+          "axis": {"title": null, "ticks": false}
+        }
+      }
+    },
+    {
+      "mark": {"type": "bar", "xOffset": 10, "size":20,"color": "red"},
+      "encoding": {
+        "y": {
+          "field": "Deaths",
+          "type": "quantitative",
+          "axis": {"title": null, "ticks": false}
+        }
+      }
+    },
+    {
+      "mark": {"type": "text"},
+      "encoding": {
+        "fill": {
+          "field": "label_name",
+          "scale": {"range": ["red", "blue"]},
+          "legend": {"title": null, "symbolType": "square", "orient": "bottom"}
+        }
+      }
+    }
+  ]
+}

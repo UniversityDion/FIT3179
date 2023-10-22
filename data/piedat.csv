@@ -1,0 +1,21 @@
+﻿Mode,Age,Injuries
+Pedestrian/Cyclist,0-14,5
+Motorcycle,0-14,0
+Cars/Trucks,0-14,3
+Other transport,0-14,3
+Pedestrian/Cyclist,15-24,82
+Motorcycle,15-24,93
+Cars/Trucks,15-24,293
+Other transport,15-24,36
+Pedestrian/Cyclist,24-44,242
+Motorcycle,24-44,179
+Cars/Trucks,24-44,490
+Other transport,24-44,66
+Pedestrian/Cyclist,45-64,163
+Motorcycle,45-64,85
+Cars/Trucks,45-64,266
+Other transport,45-64,46
+Pedestrian/Cyclist,65+,25
+Motorcycle,65+,5
+Cars/Trucks,65+,80
+Other transport,65+,14
