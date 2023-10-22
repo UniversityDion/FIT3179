@@ -4,7 +4,7 @@
   "height":"500",
   "autosize":"fit",
   "data": {
-    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "url": "https://raw.githubusercontent.com/UniversityDion/FIT3179/main/js/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
   "params": [
@@ -51,14 +51,14 @@
     
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "url": "https://raw.githubusercontent.com/UniversityDion/FIT3179/main/js/oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
       "mark": {"type": "geoshape", "fill": "#ADD8E6","stroke":"black","strokeWidth":0.1}
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+        "url": "https://raw.githubusercontent.com/UniversityDion/FIT3179/main/js/WorldMapWithGraticules.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "fill": null, "stroke": "gray","opacity":0.2}
@@ -79,7 +79,7 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "data/ALL_DATA.csv"
+              "url": "https://raw.githubusercontent.com/UniversityDion/FIT3179/main/data/All_DATA.csv"
             },
             "key": "Location",
             "fields": ["TotCons","FemaleCons","MaleCons","Period","ParentLocation","Population"]

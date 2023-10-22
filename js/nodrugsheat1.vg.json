@@ -3,7 +3,7 @@
   "hconcat":[
 
     {"width": 375,
-    "data": { "url": "data/nodrugs.csv" },
+    "data": { "url": "https://raw.githubusercontent.com/UniversityDion/FIT3179/main/data/nodrugs.csv" },
     "mark": "rect",
     "encoding": {
       "y": {"field": "Age", "type": "ordinal","title":"Age of admitted person"},

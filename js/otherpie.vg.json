@@ -4,7 +4,7 @@
     "width":"container",
     "autosize":"fit",
     "data": {
-      "url":"data/piedat.csv"
+      "url":"https://raw.githubusercontent.com/UniversityDion/FIT3179/main/data/piedat.csv"
     },
     "layer":[
       {

@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": { "url": "data/injurydeath.csv" },
+  "data": { "url": "https://raw.githubusercontent.com/UniversityDion/FIT3179/main/data/injurydeath.csv" },
   "hconcat":[
     {"width": 360,
     "mark": {"type":"line","point":true},

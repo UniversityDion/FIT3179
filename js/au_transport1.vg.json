@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "data/transportdat.csv"
+    "url": "https://raw.githubusercontent.com/UniversityDion/FIT3179/main/data/transportdat.csv"
   },
   "width": "container",
   "height":200,
